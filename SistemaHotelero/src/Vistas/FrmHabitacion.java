@@ -131,9 +131,7 @@ public class FrmHabitacion extends javax.swing.JInternalFrame {
         btnReporte = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximizable(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Habitacion");

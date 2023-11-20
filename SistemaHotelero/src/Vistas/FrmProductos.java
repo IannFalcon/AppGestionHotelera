@@ -106,9 +106,7 @@ public class FrmProductos extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         lblNroRegistros = new javax.swing.JLabel();
 
-        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximizable(true);
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registrar Productos"));

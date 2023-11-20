@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Comprobante" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45cfa136-30c5-401d-b5c5-afd7eb75fb81">
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[YmRfaG90ZWwuY2xpZW50ZSAsMzM2LDEyMCxlMzE0NWZkZS1hYThhLTQ2MWUtYmNiMi04ZDMxYmMz
-ZThhMTc7YmRfaG90ZWwucGVyc29uYSAsNDczLDU1LGY5NjI2NzcwLTYxN2UtNDYwMy1iZTZhLTNj
-MmMzOTA2YmI0MjtiZF9ob3RlbC5yZXNlcnZhICwxNzgsMTUsMTUyMzg3ZDctOTJhOC00YWEyLTk0
-MTMtNTU3OTIyNjFkNzViO2JkX2hvdGVsLnBhZ28gLDE1LDQyLGE3M2MwYjUxLWRkZmUtNGY4Yy1h
-YmY5LTc3ZTkyM2FiMTZlMzs=]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MiConexion"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="723"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="647"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="353"/>
+	<parameter name="idpago" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT concat( bd_hotel.persona.nombre,' ',bd_hotel.persona.apellido) AS Cliente,
 	bd_hotel.persona.numdocumento,
@@ -25,7 +24,8 @@ FROM bd_hotel.pago
 	INNER JOIN bd_hotel.cliente ON 
 	 bd_hotel.reserva.idcliente = bd_hotel.cliente.idpersona 
 	INNER JOIN bd_hotel.persona ON 
-	 bd_hotel.cliente.idpersona = bd_hotel.persona.idpersona]]>
+	 bd_hotel.cliente.idpersona = bd_hotel.persona.idpersona
+	 WHERE bd_hotel.pago.idpago =  $P{idpago} ]]>
 	</queryString>
 	<field name="Cliente" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="Cliente"/>
@@ -134,7 +134,7 @@ RUC: 202215456]]></text>
 				<textFieldExpression><![CDATA[$F{Cliente}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="30" width="100" height="30" uuid="ad2886b1-3375-4c4e-8ddf-007b6549e77f"/>
+				<reportElement x="130" y="30" width="130" height="30" uuid="ad2886b1-3375-4c4e-8ddf-007b6549e77f"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -148,7 +148,7 @@ RUC: 202215456]]></text>
 				<text><![CDATA[Fecha:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="50" width="100" height="20" uuid="57453226-b6bf-4e5a-8689-ec71528cc0c4"/>
+				<reportElement x="130" y="50" width="120" height="20" uuid="57453226-b6bf-4e5a-8689-ec71528cc0c4"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
